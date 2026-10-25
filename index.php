@@ -10,12 +10,19 @@
         <?php
         include 'Form.php';
         $form = new Form();
+        include 'Input.php';
+        $input = new Input('mb-3');
+        $input->setLabelClass('form-label');
         ?>
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <?php echo $form->formStart(['action' => '', 'method' => 'POST']); ?>
                     <h1>Hello, world!</h1>
+                    <?php echo $input->setLabel('Name'); ?>
+                    <?php echo $input->create(['type' => 'text', 'class' => 'form-control']); ?>
+                    <?php echo $input->setLabel('Password'); ?>
+                    <?php echo $input->create(['type' => 'password', 'class' => 'form-control']); ?>
                     <?php echo $form->formEnd(); ?>
                 </div>
             </div>
