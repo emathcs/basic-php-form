@@ -7,10 +7,16 @@
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
+        <?php
+        include 'Form.php';
+        $form = new Form();
+        ?>
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                    <?php echo $form->formStart(['action' => '', 'method' => 'POST']); ?>
                     <h1>Hello, world!</h1>
+                    <?php echo $form->formEnd(); ?>
                 </div>
             </div>
         </div>
