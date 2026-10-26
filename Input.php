@@ -1,11 +1,8 @@
 <?php
 
-class Input {
-    /**
-     * Input id.
-     */
-    private $id;
+require_once 'Element.php';
 
+class Input extends Element {
     /**
      * Input label.
      */
@@ -20,38 +17,6 @@ class Input {
      * Input container class.
      */
     private $containerClass;
-
-    /**
-     * Input attributes.
-     */
-    private $attributes = [
-        'id',
-        'class',
-        'name',
-        'placeholder',
-        'required',
-        'type',
-        'value'
-    ];
-
-    /**
-     * Set the input id function.
-     *
-     * @param type $id Input id.
-     * @return type void.
-     */
-    public function setId($id = '') {
-        $this->id = $id;
-    }
-
-    /**
-     * Get the input id function.
-     *
-     * @return type string Input id.
-     */
-    public function getId() {
-        return $this->id;
-    }
 
     /**
      * Set the input label function.
@@ -111,51 +76,17 @@ class Input {
     }
 
     /**
-     * Get the attributes array function.
-     *
-     * @return type array Attributes array.
-     */
-    public function getAttributes() {
-        return $this->attributes;
-    }
-
-    /**
-     * Get the total of attributes function.
-     *
-     * @return type integer Total of attributes.
-     */
-    public function getTotalAttributes() {
-        return count($this->attributes);
-    }
-
-    /**
-     * Create the attributes string function.
-     *
-     * @param type $attrs Form attributes array.
-     * @return type string Parameters in string format.
-     */
-    public function strAttributes($attrs = []) {
-        $strAttributes = '';
-        $attributes = $this->getAttributes();
-        $total      = $this->getTotalAttributes();
-        for ($i = 0; $i < $total; $i++) {
-            if (isset($attrs[$attributes[$i]])) {
-                $strAttributes .= $attributes[$i] . '="' . $attrs[$attributes[$i]] . '"';
-            }
-        }
-        if (isset($attrs['id'])) {
-            $this->setId($attrs['id']);
-        }
-        return $strAttributes;
-    }
-
-    /**
-     * Constructor.
+     * Constructor
      *
      * @param type $containerClass Input container class.
      * @return type void.
      */
     public function __construct($containerClass = '') {
+        $this->setAttribute('name');
+        $this->setAttribute('placeholder');
+        $this->setAttribute('required');
+        $this->setAttribute('type');
+        $this->setAttribute('value');
         $this->setContainerClass($containerClass);
     }
 

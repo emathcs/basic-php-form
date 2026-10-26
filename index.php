@@ -17,10 +17,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <?php echo $form->formStart(['action' => '', 'method' => 'POST']); ?>
+                    <?php echo $form->formInit(['action' => '', 'method' => 'POST']); ?>
                     <h1>Hello, world!</h1>
                     <?php echo $input->setLabel('Name'); ?>
-                    <?php echo $input->create(['type' => 'text', 'class' => 'form-control']); ?>
+                    <?php echo $input->create(['type' => 'text', 'id' => 'name', 'class' => 'form-control']); ?>
                     <?php echo $input->setLabel('Password'); ?>
                     <?php echo $input->create(['type' => 'password', 'class' => 'form-control']); ?>
                     <?php echo $input->setLabel(''); ?>
