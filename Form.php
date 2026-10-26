@@ -17,7 +17,7 @@ class Form extends Element {
      *
      * @return type string Form open tag.
      */
-    public function formStart($attrs = []) {
+    public function formInit($attrs = []) {
         $strAttributes = $this->strAttributes($attrs);
         return '<form ' . $strAttributes . '>';
     }
