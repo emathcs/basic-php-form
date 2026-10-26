@@ -4,7 +4,10 @@ class Element {
     /**
      * Element attributes.
      */
-    private $attributes = [];
+    private $attributes = [
+        'id',
+        'class'
+    ];
 
     /**
      * Set an Element attribute function.
