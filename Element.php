@@ -2,6 +2,30 @@
 
 class Element {
     /**
+     * Input id.
+     */
+    private $id;
+
+    /**
+     * Set the input id function.
+     *
+     * @param type $id Input id.
+     * @return type void.
+     */
+    public function setId($id = '') {
+        $this->id = $id;
+    }
+
+    /**
+     * Get the input id function.
+     *
+     * @return type string Input id.
+     */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
      * Element attributes.
      */
     private $attributes = [
@@ -46,6 +70,9 @@ class Element {
      * @return type string Parameters in string format.
      */
     public function strAttributes($attrs = []) {
+        if (isset($attrs['id'])) {
+            $this->setId($attrs['id']);
+        }
         $strAttributes = '';
         $attributes = $this->getAttributes();
         $total      = $this->getTotalAttributes();
