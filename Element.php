@@ -2,6 +2,23 @@
 
 class Element {
     /**
+     * Element attributes.
+     */
+    private $attributes = [];
+
+    /**
+     * Set an Element attribute function.
+     *
+     * @param type $attr Element attribute.
+     * @return type void.
+     */
+    public function setAttribute($attr = '') {
+        if (strlen($attr)) {
+            $this->attributes[] = $attr;
+        }
+    }
+
+    /**
      * Get the attributes array function.
      *
      * @return type array Attributes array.
