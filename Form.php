@@ -1,53 +1,21 @@
 <?php
 
-class Form {
-    /**
-     * Form attributes.
-     */
-    private $attributes = [
-        'action',
-        'class',
-        'method'
-    ];
+require_once 'Element.php';
 
+class Form extends Element {
     /**
-     * Get the attributes array function.
-     *
-     * @return type array Attributes array.
+     * Constructor
      */
-    public function getAttributes() {
-        return $this->attributes;
+    public function __construct() {
+        $this->setAttribute('action');
+        $this->setAttribute('class');
+        $this->setAttribute('method');
     }
 
     /**
-     * Get the total of attributes function.
+     * Open the HTML form tag function.
      *
-     * @return type integer Total of attributes.
-     */
-    public function getTotalAttributes() {
-        return count($this->attributes);
-    }
-
-    /**
-     * Create the attributes string function.
-     *
-     * @param type $attrs Form attributes array.
-     * @return type string Parameters in string format.
-     */
-    public function strAttributes($attrs = []) {
-        $strAttributes = '';
-        $attributes = $this->getAttributes();
-        $total      = $this->getTotalAttributes();
-        for ($i = 0; $i < $total; $i++) {
-            if (isset($attrs[$attributes[$i]])) {
-                $strAttributes .= $attributes[$i] . '="' . $attrs[$attributes[$i]] . '"';
-            }
-        }
-        return $strAttributes;
-    }
-
-    /**
-     * Open the HTML form tag.
+     * @return type string Form open tag.
      */
     public function formStart($attrs = []) {
         $strAttributes = $this->strAttributes($attrs);
@@ -55,7 +23,9 @@ class Form {
     }
 
     /**
-     * Close the HTML form tag.
+     * Close the HTML form tag function.
+     *
+     * @return type string Form close tag.
      */
     public function formEnd() {
         return '</form>';
