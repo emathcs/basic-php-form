@@ -30,7 +30,8 @@ class Input {
         'name',
         'placeholder',
         'required',
-        'type'
+        'type',
+        'value'
     ];
 
     /**
@@ -167,7 +168,9 @@ class Input {
     public function create($attrs = []) {
         $strAttributes = $this->strAttributes($attrs);
         $html  = '<div class="' . $this->getContainerClass() . '">';
-        $html .= '    <label for="' . $this->getId() . '" class="' . $this->getLabelClass() . '">' . $this->getLabel() . '</label>';
+        if (strlen($this->getLabel())) {
+            $html .= '    <label for="' . $this->getId() . '" class="' . $this->getLabelClass() . '">' . $this->getLabel() . '</label>';
+        }
         $html .= '    <input ' . $strAttributes . '>';
         $html .= '</div>';
         return $html;

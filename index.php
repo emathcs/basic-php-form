@@ -23,6 +23,8 @@
                     <?php echo $input->create(['type' => 'text', 'class' => 'form-control']); ?>
                     <?php echo $input->setLabel('Password'); ?>
                     <?php echo $input->create(['type' => 'password', 'class' => 'form-control']); ?>
+                    <?php echo $input->setLabel(''); ?>
+                    <?php echo $input->create(['type' => 'submit','name' => 'submit', 'value' =>'Submit', 'class' => 'btn btn-primary']); ?>
                     <?php echo $form->formEnd(); ?>
                 </div>
             </div>
