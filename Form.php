@@ -8,7 +8,6 @@ class Form extends Element {
      */
     public function __construct() {
         $this->setAttribute('action');
-        $this->setAttribute('class');
         $this->setAttribute('method');
     }
 
