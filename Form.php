@@ -16,7 +16,7 @@ class Form extends Element {
      *
      * @return type string Form open tag.
      */
-    public function formInit($attrs = []) {
+    public function init($attrs = []) {
         $strAttributes = $this->strAttributes($attrs);
         return '<form ' . $strAttributes . '>';
     }
@@ -26,7 +26,7 @@ class Form extends Element {
      *
      * @return type string Form close tag.
      */
-    public function formEnd() {
+    public function end() {
         return '</form>';
     }
 }
